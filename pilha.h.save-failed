@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 50
+
+
+
+typedef struct{
+	int item [MAX];
+	int topo;
+}Pilha;
+
+void iniPilha(Pilha *p){
+	p->topo = 0;
+}
+
+int nullPilhaTeste (Pilha *p){
+    if (p->topo == 0){
+        //puts("Pilha vazia");
+		//system("Pause");
+		return "Correto!";
+	}else{
+        return(0);
+    }
+}
+
+int compara(Pilha *h, Pilha *k)
+{
+    Pilha *aux1;
+    Pilha *aux2;
+
+    while(nullPilha(&h) && nullPilha(&k))
+    {
+
+    }
+}
+
+int nullPilha (Pilha *p){
+    if (p->topo == 0){
+        //puts("Pilha vazia");
+		//system("Pause");
+		return(1);
+	}else{
+        return(0);
+    }
+}
+/*
+int check(Pilha **L, int b, int x)
+{
+	Pilha *P;
+	P = *L;
+	for(i = 0; i < b; i++){
+		if(x == P->item[i])
+		{
+			printf("ERROU SE FODEU");
+		}
+	}
+}
+*/
+
+int fullPilha(Pilha *p){
+	if (p->topo == MAX)
+		return(1);
+	else
+		return (0);
+}
+
+int push(Pilha *p, int x){
+	if (fullPilha(p))
+		return(-1);
+	else {
+		p->item[p->topo] = x;
+		p->topo++;
+		return(p->topo);
+	}
+}
+
+int pop(Pilha *p){
+	p->topo--;
+	return p->item[p->topo];
+}
+
+int listar(Pilha *p){
+	for(int i = 0; i < p->topo; i++){
+		int a = p->item[i];
+		if(a == '#')
+			break;
+		printf("%d\n", a);
+	}
+	printf("\n");
+}
