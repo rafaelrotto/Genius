@@ -32,7 +32,7 @@ void compara2(Pilha *p, Pilha *h)
 {
     for(int i = 0; i < p->topo; i++)
     {
-		int a = p->item[i];
+	int a = p->item[i];
         int b = h->item[i];
         if(a != b)
         {
@@ -40,7 +40,7 @@ void compara2(Pilha *p, Pilha *h)
             fimDeJogo();
             exit(12);
         }
-	}
+    }
 }
 
 int nullPilha (Pilha *p){
